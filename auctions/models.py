@@ -14,7 +14,7 @@ class auctions(models.Model):
     title = models.CharField(max_length=64)
     description = models.CharField(max_length=64)
     bid = models.IntegerField(validators=[MinValueValidator(1)])
-    image = models.ImageField(upload_to='images/', blank=True)
+    image = models.URLField(max_length=2048, blank=True)
     user = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name="auctions")
     active = models.BooleanField(default=True)

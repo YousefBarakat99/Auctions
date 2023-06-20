@@ -28,7 +28,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',
-    'auctions-six.vercel.app'
+    'auctions-six.vercel.app',
+    '127.0.0.1'
 ]
 
 # Application definition

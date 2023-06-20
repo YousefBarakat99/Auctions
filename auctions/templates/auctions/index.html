@@ -10,7 +10,7 @@
       <li><strong>Highest bid:</strong> ${{ listing.bid }}</li>
       <li>Category: {{ listing.category }}</li>
       {% if listing.image %}
-        <img src="images/{{ listing.image }}" style="height: 250px; width: auto;"/></li>
+        <img src="{{ listing.image }}" style="height: 250px; width: auto;"/></li>
       {% endif %} 
     </ul>
   </li>{% endfor %} {% endblock %}

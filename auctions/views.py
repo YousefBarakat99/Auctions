@@ -75,7 +75,7 @@ class NewListingForm(forms.ModelForm):
 
 def create(request):
     if request.method == "POST":
-        form = NewListingForm(request.POST, request.FILES)
+        form = NewListingForm(request.POST)
         if form.is_valid():
             new_listing = form.save(commit=False)
             new_listing.user = request.user

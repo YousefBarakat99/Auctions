@@ -31,7 +31,7 @@
 
     {% if listing.image %}
         <p><strong>Item Image: </strong></p>
-        <img src="{{ listing.image.url }}" style="height: 350px; width: auto;"/>
+        <img src="{{ listing.image }}" style="height: 350px; width: auto;"/>
     {% endif %}
     <p><strong>Description: </strong>{{ listing.description.capitalize }}</p>
     <p><strong>Category: </strong>{{ listing.category }}</p>
