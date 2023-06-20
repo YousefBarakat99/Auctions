@@ -1,14 +1,10 @@
 from hmac import new
-from random import choices
-import comm
 from django import forms
 from django.contrib.auth import authenticate, login, logout
 from django.db import IntegrityError
-from django.http import HttpResponse, HttpResponseRedirect
+from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.urls import reverse
-from matplotlib import use
-from sklearn.metrics import auc
 
 from .models import User, auctions, bid, comments
 
