@@ -26,8 +26,10 @@ SECRET_KEY = '6ps8j!crjgrxt34cqbqn7x&b3y%(fny8k8nh21+qa)%ws3fh!q'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = [
+    'localhost',  # Add other allowed hosts here
+    'auctions-62l38f2o6-yousefbarakat99.vercel.app',
+]
 
 # Application definition
 
