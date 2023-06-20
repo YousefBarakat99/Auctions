@@ -79,6 +79,7 @@ WSGI_APPLICATION = 'commerce.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
+load_dotenv('.env')
 
 DATABASES = {
     'default': {
