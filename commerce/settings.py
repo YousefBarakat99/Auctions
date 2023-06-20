@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',  # Add other allowed hosts here
     'auctions-62l38f2o6-yousefbarakat99.vercel.app',
+    'auctions-six.vercel.app'
 ]
 
 # Application definition
