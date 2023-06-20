@@ -1,0 +1,14 @@
+{% extends 'auctions/layout.html' %}
+{% block title %}
+    {{ category }}
+{% endblock %}
+{% block body %}
+    <h2>{{ category }}</h2>
+    {% for listing in listings %}
+        {% if listing.category == category %}
+            <ul>
+                <li><a href="{% url 'listing' listing.id %}"><h3>{{ listing.title.capitalize }}</h3></a></li>
+            </ul>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

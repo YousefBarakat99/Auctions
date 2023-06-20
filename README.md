@@ -1,2 +1,2 @@
-# Auctions
-Django project
+# Django
+ Django projects

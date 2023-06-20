@@ -1,0 +1,2 @@
+# Auctions
+ Django project

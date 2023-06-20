@@ -1,0 +1,27 @@
+{% extends 'auctions/layout.html' %}
+{% block title %}
+    Watchlist
+{% endblock %}
+{% block body %}
+    <h2>Watchlist</h2>
+    {% if listings %}
+        <ul>
+            {% for listing in listings %}
+                <li>
+                    <a href="{% url 'listing' listing.id %}"><h2>{{ listing.title.capitalize }}</h2></a>
+                    <ul>
+                        <li>{{ listing.description.capitalize }}</li>
+                        <li>$ {{ listing.bid }}</li>
+                        <li>Category: {{ listing.category }}</li>
+                        {% if listing.image %}
+                            <img src="{{ listing.image.url }}" style="height: 250px; width: auto;"/>
+                        {% endif %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>You have no items in your watchlist.</p>
+    {% endif %}
+{% endblock %}
+```
