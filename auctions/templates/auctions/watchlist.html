@@ -3,18 +3,20 @@
     Watchlist
 {% endblock %}
 {% block body %}
-    <h2>Watchlist</h2>
+    <h2 class="heading">Watchlist</h2>
     {% if listings %}
-        <ul>
+        <ul class="auction-list">
             {% for listing in listings %}
-                <li>
-                    <a href="{% url 'listing' listing.id %}"><h2>{{ listing.title.capitalize }}</h2></a>
-                    <ul>
-                        <li>{{ listing.description.capitalize }}</li>
-                        <li>$ {{ listing.bid }}</li>
-                        <li>Category: {{ listing.category }}</li>
+                <li class="auction-item">
+                    <a href="{% url 'listing' listing.id %}">
+                        <h2 class="auction-item-title">{{ listing.title.capitalize }}</h2>
+                    </a>
+                    <ul class="auction-item-info">
+                        <li class="auction-item-description">{{ listing.description.capitalize }}</li>
+                        <li class="auction-item-bid">$ {{ listing.bid }}</li>
+                        <li class="auction-item-category">Category: {{ listing.category }}</li>
                         {% if listing.image %}
-                            <img src="{{ listing.image }}" style="height: 250px; width: auto;"/>
+                            <img class="auction-item-image" src="{{ listing.image }}" alt="Listing Image">
                         {% endif %}
                     </ul>
                 </li>
@@ -24,4 +26,3 @@
         <p>You have no items in your watchlist.</p>
     {% endif %}
 {% endblock %}
-```

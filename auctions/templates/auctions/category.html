@@ -3,12 +3,16 @@
     {{ category }}
 {% endblock %}
 {% block body %}
-    <h2>{{ category }}</h2>
-    {% for listing in listings %}
-        {% if listing.category == category %}
-            <ul>
-                <li><a href="{% url 'listing' listing.id %}"><h3>{{ listing.title.capitalize }}</h3></a></li>
-            </ul>
-        {% endif %}
-    {% endfor %}
+    <h2 class="heading">{{ category }}</h2>
+    <ul class="auction-list">
+        {% for listing in listings %}
+            {% if listing.category == category %}
+                <li class="auction-item">
+                    <a href="{% url 'listing' listing.id %}">
+                        <h3 class="auction-item-title">{{ listing.title.capitalize }}</h3>
+                    </a>
+                </li>
+            {% endif %}
+        {% endfor %}
+    </ul>
 {% endblock %}

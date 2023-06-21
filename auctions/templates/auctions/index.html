@@ -1,17 +1,35 @@
-{% extends "auctions/layout.html" %} {% block body %}
-<h2>All Listings</h2>
-<ul>
-  {% for listing in listings %}
-  <li>
-    <a href="{% url 'listing' listing.id %}"><h2>{{ listing.title.capitalize }}</h2></a>
-    <ul>
-      <li><strong>Status:</strong> {% if listing.active %}Active! {% else %}Closed! {% endif %}</li>
-      <li>{{ listing.description.capitalize }}</li>
-      <li><strong>Highest bid:</strong> ${{ listing.bid }}</li>
-      <li>Category: {{ listing.category }}</li>
-      {% if listing.image %}
-        <img src="{{ listing.image }}" style="height: 250px; width: auto;"/></li>
-      {% endif %} 
-    </ul>
-  </li>{% endfor %} {% endblock %}
-</ul>
+{% extends "auctions/layout.html" %}
+
+{% block body %}
+    <h2 class="heading">All Listings</h2>
+    <div class="container">
+        {% if listings %}
+            <ul class="auction-list">
+                {% for listing in listings %}
+                    <li class="auction-item">
+                        <a href="{% url 'listing' listing.id %}">
+                            <div class="auction-item-image">
+                                {% if listing.image %}
+                                    <img src="{{ listing.image }}" alt="{{ listing.title }}" class="auction-image">
+                                {% else %}
+                                    <div class="no-image-placeholder">No Image Available</div>
+                                {% endif %}
+                            </div>
+                            <div class="auction-item-details">
+                                <h2 class="auction-item-title">{{ listing.title.capitalize }}</h2>
+                                <ul class="auction-item-info">
+                                    <li><strong>Status:</strong> {% if listing.active %}Active{% else %}Closed{% endif %}</li>
+                                    <li><strong>Highest bid:</strong> ${{ listing.bid }}</li>
+                                    <li><strong>Category:</strong> {{ listing.category }}</li>
+                                    <li><strong>Created by:</strong> {{ listing.user }}</li>
+                                </ul>
+                            </div>
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p>No listings available.</p>
+        {% endif %}
+    </div>
+{% endblock %}
