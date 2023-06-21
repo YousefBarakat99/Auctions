@@ -18,4 +18,4 @@ urlpatterns = [
     path("close/<int:listing_id>/", views.close, name="close"),
     path("categories/", views.categories, name="categories"),
     path("category/<str:category>/", views.category, name="category"),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
