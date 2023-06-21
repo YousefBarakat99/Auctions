@@ -1,12 +1,4 @@
-# Remove existing static files build directory
-rm -rf staticfiles_build
+#/bin/bash
 
-# Run Django collectstatic command to generate static files
+pip install -r requirements.txt
 python manage.py collectstatic --noinput
-
-# Move static files to the build directory
-mkdir staticfiles_build
-mv static/* staticfiles_build/
-
-# Remove any remaining empty 'static' directory
-rm -rf static
