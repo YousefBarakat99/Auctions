@@ -3,9 +3,6 @@ from django.db import models
 from django.core.validators import MinValueValidator
 
 class User(AbstractUser):
-    username = models.CharField(max_length=1024, unique=True)
-    email = models.EmailField(unique=True)
-    password = models.CharField(max_length=1024)
     watchlist = models.ManyToManyField(
         'auctions', blank=True, related_name="watchlist")
     
